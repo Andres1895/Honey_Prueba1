@@ -1,0 +1,16 @@
+.containerSlider{
+    display: flex;
+    width: 80%;
+    position: relative;
+    background-image: url('../Images/body.jpg')
+}
+
+.slider{
+    flex: 1;
+    background-color:  aliceblue;
+    height: 100;
+    position: absolute;
+}
+.Logo{
+    background-image: url('../Images/body.jpg')
+}

@@ -1,0 +1,8 @@
+.containerPrincipal {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    width: 100%;
+    min-height: -webkit-fill-available;
+}
+
