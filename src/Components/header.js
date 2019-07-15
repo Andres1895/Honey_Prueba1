@@ -1,5 +1,6 @@
 import React from 'react';
 import '../Styles/header.css'
+import FormLogin from './formLogin'
 
 
 class Header extends React.Component{
@@ -7,12 +8,10 @@ class Header extends React.Component{
         return(
             <div class="containerHeader">
                 <div class="headerItem1">
-                        hola
+                    <img src={require('../Images/hw.png')} style={{width:"200px"}}/>
                 </div>
                 <div class="headerItem2">
-                   <div>
-                       Form
-                   </div>
+                       <FormLogin/>
                 </div>
             </div>
         );
