@@ -4,15 +4,21 @@ import '../Styles/header.css'
 
 class FormLogin extends React.Component{
     constructor(props){
-        super(props);{
+        super(props)
             this.state={
-                    user:'',
-                    password:''
-
-            };
-        // this.handleChange = this.handleChange.bind(this)
-        }
+                user:'',
+                password:''
+                };     
     }
+
+    handleClick = () => {
+        console.log('Acualizado');
+        if(this.state.user==="Andres"){
+            console.log("Bienvenido")
+        }else{
+            console.log("No valid")
+        }
+    }   
     
     render(){
         return(
@@ -24,8 +30,7 @@ class FormLogin extends React.Component{
                     name="user" 
                     class="formStyle" 
                     placeholder="User"
-                    value={this.state.user}
-                    onChange={this.handleChange}
+                    onChange={this.state.user}
                     />
                     <label class="labelItem">
                     Password
@@ -33,12 +38,13 @@ class FormLogin extends React.Component{
                     <input type= "password"
                     name="password"
                     class="formStyle"
-                    value={this.state.password}
+                  
+                    onChange={this.state.password}
                     placeholder="Password"
                     />
                 </form>
                 <div class="buttonStyle">
-                    <button clasS="buttonItem">Ingresa</button>
+                    <button onClick={this.handleClick} class="buttonItem">Ingresa</button>
                 </div>
 
             </div>
