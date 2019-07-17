@@ -9,18 +9,33 @@ class FormLogin extends React.Component{
                 user:'',
                 password:''
                 };     
+            this.handleChange=this.handleChange.bind(this);
+    }
+
+    componentDidMount(){
+        console.log(this.state);
+        this.setState(()=> ({
+            user: 'Montserrat',
+            password: 'contraseña'
+        }))
+
     }
 
     handleClick = () => {
         console.log('Acualizado');
-        if(this.state.user==="Andres"){
+        if(this.state.user==="Montserrat"){
             console.log("Bienvenido")
         }else{
             console.log("No valid")
         }
     }   
+    handleChange(event){
+        this.setState({value: event.target.value});
+    }
     
     render(){
+        console.log(this.state)
+        const {pass, user} = this.state;
         return(
             <div>
                 <form class="headerItem2">
@@ -30,7 +45,7 @@ class FormLogin extends React.Component{
                     name="user" 
                     class="formStyle" 
                     placeholder="User"
-                    onChange={this.state.user}
+                    onChange={this.handleChange}
                     />
                     <label class="labelItem">
                     Password
@@ -38,8 +53,7 @@ class FormLogin extends React.Component{
                     <input type= "password"
                     name="password"
                     class="formStyle"
-                  
-                    onChange={this.state.password}
+                    onChange={this.handleChange}
                     placeholder="Password"
                     />
                 </form>
