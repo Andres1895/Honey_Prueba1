@@ -9,27 +9,46 @@ class FormLogin extends React.Component{
                 user:'',
                 password:''
                 };     
-            this.handleChange=this.handleChange.bind(this);
+         //   this.handleChangeUser=this.handleChangeUser.bind(this);
+         //   this.handleChangePassword=this.handleChangePassword.bind(this);
             this.handleClick=this.handleClick.bind(this);
+            this.handleChange=this.handleChange.bind(this);
     }
 
- /*   componentDidMount(){
+ 
+   /* 
+    componentDidMount(){
         console.log(this.state);
         this.setState(()=> ({
             user: 'Montserrat',
             password: 'contraseña'
         }))
 
-    }*/
+    }
+    
+    handleChangeUser(event){
+        this.setState({user: event.target.value});
+    }
+    handleChangePassword(event){
+        this.setState({password: event.target.value});
+    }
+
+    */
 
     handleClick(){
-        console.log('A name was submitted: ' + this.state.user);
-        
+        console.log(this.state.password)
+        if(this.state.user==="Andres" && this.state.password ==="contraseña"){
+            console.log("Bienvenido")
+        }else{
+            console.log("no valido")
+        }
     }   
 
     handleChange(event){
-        this.setState({user: event.target.user,
-                       password: event.target.password});
+        console.log("Entrando a handleChange");
+        console.log(event.target.name);
+        console.log(event.target.value);
+        this.setState({ [event.target.name]: event.target.value });
     }
     
     render(){
@@ -43,8 +62,7 @@ class FormLogin extends React.Component{
                     <input type="user" 
                     name="user" 
                     class="formStyle" 
-                    placeholder="User"
-                    user={user}
+                    value={user}
                     onChange={this.handleChange}
                     />
                     <label class="labelItem">
@@ -54,14 +72,12 @@ class FormLogin extends React.Component{
                     name="password"
                     class="formStyle"
                     onChange={this.handleChange}
-                    password={pass}
-                    placeholder="Password"
+                    value={pass}
                     />
                 </form>
                 <div class="buttonStyle">
-                    <button onClick={this.handleClick()} class="buttonItem">Ingresa</button>
+                    <button onClick={this.handleClick} class="buttonItem">Ingresa</button>
                 </div>
-
             </div>
         );
     }
