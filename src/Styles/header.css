@@ -37,12 +37,11 @@
     display: flex;
     align-content:center; 
     align-items: center;
-    flex-direction: column-reverse;
-    margin: 20px;
 
 }
 .buttonItem{
     color: blue;
+    margin: 20px;
 
 }
 .toggleLabelItem{
