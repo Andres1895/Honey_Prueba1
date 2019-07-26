@@ -13,8 +13,8 @@ function App() {
   
   return (
 
-      <Router >
-      <div className="containerPrincipal">
+      <Router className="containerPrincipal">
+      <div  >
             <Link to="/">Inicio</Link>
             <Link to="/home">Home</Link>
           <Route exact path="/" render={props =>
