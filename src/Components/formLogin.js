@@ -87,12 +87,8 @@ class FormLogin extends React.Component{
                 </form>
                 <div class="buttonStyle">
                     <button onClick={this.handleClick} class="buttonItem">Ingresa</button>
-                </div>
-                
-                <div class="buttonStyle">
                     <button onClick={this.handleClean} class="buttonItem">Borrar</button>
-                </div>
-               
+                </div>              
             </div>
         );
     }

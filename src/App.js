@@ -12,23 +12,25 @@ library.add(fab);
 function App() {
   
   return (
-
-      <Router className="containerPrincipal">
-      <div  >
-            <Link to="/">Inicio</Link>
-            <Link to="/home">Home</Link>
-          <Route exact path="/" render={props =>
+      <div>       
+          <Router className="routerComponent" >
             <div>
-              <Header />
-              <Slider />
+                <div>
+                    <Link to="/">Inicio</Link>
+                    <Link to="/home">Home</Link>
+                </div>
+                <div>
+                    <Route exact path="/" render={props =>
+                      <div  class="ho">
+                          <Header />
+                          <Slider />
+                      </div>
+                    } />
+                    <Route exact path="/home" component={Home} />
+                </div>
             </div>
-          } />
-          <Route exact path="/home" component={Home} />
-          
+          </Router>
       </div>
-      </Router>
-
-
   );
 }
 
