@@ -1,5 +1,6 @@
 import React from 'react';
 import '../Styles/header.css'
+import Home from '../Components/Home';
 
 
 class FormLogin extends React.Component{
@@ -7,48 +8,46 @@ class FormLogin extends React.Component{
         super(props)
             this.state={
                 user:'',
-                password:''
+                password:'',
+                show: false,
+                nickname: '',
                 };     
-         //   this.handleChangeUser=this.handleChangeUser.bind(this);
-         //   this.handleChangePassword=this.handleChangePassword.bind(this);
             this.handleClick=this.handleClick.bind(this);
             this.handleChange=this.handleChange.bind(this);
+            this.handleClean=this.handleClean.bind(this);
     }
-
- 
-   /* 
     componentDidMount(){
-        console.log(this.state);
-        this.setState(()=> ({
-            user: 'Montserrat',
-            password: 'contraseña'
+        this.setState(()=>({
+            user:'',
+            password:'',
+            show: false,
+            nickname: ''
         }))
 
     }
-    
-    handleChangeUser(event){
-        this.setState({user: event.target.value});
-    }
-    handleChangePassword(event){
-        this.setState({password: event.target.value});
-    }
-
-    */
 
     handleClick(){
-        console.log(this.state.password)
+        const {show} = this.state;
+        console.log(show)
         if(this.state.user==="Andres" && this.state.password ==="contraseña"){
             console.log("Bienvenido")
+            this.setState({show: true})
         }else{
             console.log("no valido")
+            this.setState({show: false})
         }
     }   
 
     handleChange(event){
-        console.log("Entrando a handleChange");
-        console.log(event.target.name);
-        console.log(event.target.value);
         this.setState({ [event.target.name]: event.target.value });
+    }
+    handleClean(event){
+        this.setState({
+            user:'',
+            password:'',
+            show: false,
+            nickname: ''
+        })
     }
     
     render(){
@@ -74,10 +73,26 @@ class FormLogin extends React.Component{
                     onChange={this.handleChange}
                     value={pass}
                     />
+                     {this.state.show && 
+                    <form class="headerItem2">
+                        <label class="labelItem">
+                            Número
+                        </label>
+                        <input type= "nickname"
+                        name="nickname"
+                        class="formStyle"
+                        value={pass}
+                        />
+                    </form>}
                 </form>
                 <div class="buttonStyle">
                     <button onClick={this.handleClick} class="buttonItem">Ingresa</button>
                 </div>
+                
+                <div class="buttonStyle">
+                    <button onClick={this.handleClean} class="buttonItem">Borrar</button>
+                </div>
+               
             </div>
         );
     }
