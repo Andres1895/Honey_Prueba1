@@ -5,9 +5,7 @@ import '../Styles/home.css'
 class Home extends React.Component{
     render(){
         return(
-            <div class="containerHeader">
-               Hola
-            </div>
+            <div class="containerHeader"/>
         );
     }
 }

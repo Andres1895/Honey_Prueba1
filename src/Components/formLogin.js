@@ -23,7 +23,6 @@ class FormLogin extends React.Component{
             show: false,
             nickname: ''
         }))
-
     }
 
     handleClick(){

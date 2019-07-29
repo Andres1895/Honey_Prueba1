@@ -1,0 +1,25 @@
+.mainContainer{
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(4,153,157, .7);
+
+}
+
+.titleItem{
+    color: #FFFFFF;
+    font-size: 20vh;
+    font-weight: bold;
+    text-align: justify;
+}
+
+.textItem{
+    color: #FFFFFF;
+    font-size: 10vh;
+    text-align: justify;
+}
+
+.linkItem{
+    color: #FFFFFF;
+    font-size: 5vh;
+    align-content: flex-end;
+}
